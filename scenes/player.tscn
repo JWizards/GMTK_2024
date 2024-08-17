@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp7fqr0h5s378"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_b017k"]
+[ext_resource type="Texture2D" uid="uid://b3oafp4mos657" path="res://assets/fishTilesheet@2.png" id="1_kkcwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yaqr"]
+atlas = ExtResource("1_kkcwp")
+region = Rect2(1280, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey5yg"]
+atlas = ExtResource("1_kkcwp")
+region = Rect2(1408, 640, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hfn3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yaqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey5yg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fwvx"]
+radius = 41.9762
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_b017k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hfn3t")
+frame_progress = 0.142065
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 1)
+shape = SubResource("CircleShape2D_4fwvx")
