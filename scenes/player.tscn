@@ -1,40 +1,63 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp7fqr0h5s378"]
+[gd_scene load_steps=8 format=3 uid="uid://bg8l080p3dvvb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_b017k"]
 [ext_resource type="Texture2D" uid="uid://b3oafp4mos657" path="res://assets/fishTilesheet@2.png" id="1_kkcwp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yaqr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hodkl"]
 atlas = ExtResource("1_kkcwp")
-region = Rect2(1280, 640, 128, 128)
+region = Rect2(1288, 648, 248, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ey5yg"]
-atlas = ExtResource("1_kkcwp")
-region = Rect2(1408, 640, 128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx7ah"]
+radius = 43.0116
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hfn3t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1yaqr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ey5yg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_y8y87"]
+resource_name = "big"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4fwvx"]
-radius = 41.9762
+[sub_resource type="Animation" id="Animation_phfbs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqws4"]
+_data = {
+"RESET": SubResource("Animation_phfbs"),
+"big": SubResource("Animation_y8y87")
+}
+
+[node name="Player" type="RigidBody2D"]
 script = ExtResource("1_b017k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hfn3t")
-frame_progress = 0.142065
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_hodkl")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 1)
-shape = SubResource("CircleShape2D_4fwvx")
+position = Vector2(3, -3)
+shape = SubResource("CircleShape2D_qx7ah")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xqws4")
+}

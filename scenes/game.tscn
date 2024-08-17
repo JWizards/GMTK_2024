@@ -1,17 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bft4dl5ayjcep"]
+[gd_scene load_steps=4 format=3 uid="uid://bft4dl5ayjcep"]
 
-[ext_resource type="PackedScene" uid="uid://bp7fqr0h5s378" path="res://scenes/player.tscn" id="1_r30et"]
+[ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7ejw"]
+normal = Vector2(-0.973225, 0.229856)
+distance = 62.5409
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_31oke"]
 
 [node name="root" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_r30et")]
+[node name="Wall" type="StaticBody2D" parent="."]
+rotation = 0.213527
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(495.957, -114.702)
+rotation = -0.289227
+shape = SubResource("WorldBoundaryShape2D_c7ejw")
+
+[node name="Line2D" type="Line2D" parent="Wall"]
+position = Vector2(600.633, 221.757)
+points = PackedVector2Array(0, 0, -500, -1000)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="SlopedGround" type="StaticBody2D" parent="."]
+rotation = 0.213527
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlopedGround"]
 position = Vector2(0, 81)
 shape = SubResource("WorldBoundaryShape2D_31oke")
+
+[node name="Line2D" type="Line2D" parent="SlopedGround"]
+position = Vector2(-756.419, 79.0875)
+points = PackedVector2Array(0, 0, 1800, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_r30et")]
