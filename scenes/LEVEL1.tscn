@@ -69,7 +69,6 @@ shape = SubResource("SegmentShape2D_jorcv")
 [node name="Flooring1_1" type="StaticBody2D" parent="FLOORING"]
 position = Vector2(424, 386)
 rotation = -1.70891
-scale = Vector2(1, 1)
 
 [node name="Line2D" type="Line2D" parent="FLOORING/Flooring1_1"]
 position = Vector2(-1, -172)
