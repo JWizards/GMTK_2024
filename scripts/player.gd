@@ -15,7 +15,6 @@ var flag: bool = false
 func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
-		print_debug("Test!")
 		if not flag:
 			apply_central_impulse(Vector2(0,-600))
 			sprite_2d.apply_scale(Vector2(inflation_ratio,inflation_ratio))

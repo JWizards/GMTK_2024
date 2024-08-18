@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bft4dl5ayjcep"]
+[gd_scene load_steps=5 format=3 uid="uid://bft4dl5ayjcep"]
 
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
+[ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_3jpav"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7ejw"]
 normal = Vector2(-0.973225, 0.229856)
@@ -36,3 +37,7 @@ position = Vector2(-756.419, 79.0875)
 points = PackedVector2Array(0, 0, 1800, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_r30et")]
+
+[node name="Spikes" parent="." instance=ExtResource("2_3jpav")]
+position = Vector2(-209, -1.99998)
+rotation = 0.201188
