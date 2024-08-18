@@ -10,21 +10,6 @@ region = Rect2(1288, 648, 248, 120)
 [sub_resource type="CircleShape2D" id="CircleShape2D_qx7ah"]
 radius = 43.0116
 
-[sub_resource type="Animation" id="Animation_y8y87"]
-resource_name = "big"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 0, 1]
-}
-
 [sub_resource type="Animation" id="Animation_phfbs"]
 length = 0.001
 tracks/0/type = "value"
@@ -38,6 +23,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y8y87"]
+resource_name = "big"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_quq0c"]
@@ -66,11 +66,13 @@ _data = {
 script = ExtResource("1_b017k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = SubResource("AtlasTexture_hodkl")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -3)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_qx7ah")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
