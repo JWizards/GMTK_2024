@@ -15,14 +15,14 @@ position = Vector2(-13, -56)
 position = Vector2(347, -175)
 
 [node name="SPIKE1" parent="." instance=ExtResource("2_3cap4")]
-position = Vector2(670, 305)
+position = Vector2(662, 308)
 rotation = 1.56726
-scale = Vector2(0.86, 1.01)
+scale = Vector2(0.765, 0.785)
 
 [node name="SPIKE2" parent="." instance=ExtResource("2_3cap4")]
-position = Vector2(529, 639)
+position = Vector2(535, 641)
 rotation = 4.71239
-scale = Vector2(0.868598, 0.868602)
+scale = Vector2(0.794, 0.689)
 skew = -0.00114048
 
 [node name="WallLeft" type="StaticBody2D" parent="."]
