@@ -5,7 +5,9 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	print_debug("You died!")
 	body.set_block_signals(false)
-	body.get_node("AnimationPlayer").play("die")
+	if body.has_method("die"):
+		if body.die():
+			body.get_node("AnimationPlayer").play("die")
 	Engine.time_scale = 0.5
 	timer.start()
 	

@@ -13,6 +13,13 @@ var inflated_physics = PhysicsMaterial.new()
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var disable_jump: bool = false
+var is_dead: bool = false
+
+func die() -> bool:
+	if is_dead:
+		return false  # death unsuccessful - already dead
+	is_dead = true
+	return true
 
 func _init() -> void:
 	can_sleep = false
@@ -21,6 +28,8 @@ func _init() -> void:
 	inflated_physics.set_bounce(1)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if is_dead:
+		return
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
 		if not disable_jump:
