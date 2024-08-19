@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnqeobhcw6a4w"]
+[gd_scene load_steps=6 format=3 uid="uid://dfbecy5ue6ncu"]
 
 [ext_resource type="Script" path="res://scripts/round_retractible_spikes.gd" id="1_t1g0u"]
 [ext_resource type="Texture2D" uid="uid://bs2yy64tpt387" path="res://assets/tilesheet_complete_2X.png" id="2_ahwl3"]
