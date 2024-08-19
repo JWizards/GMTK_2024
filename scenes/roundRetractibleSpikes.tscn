@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnqeobhcw6a4w"]
+
+[ext_resource type="Script" path="res://scripts/round_retractible_spikes.gd" id="1_t1g0u"]
+[ext_resource type="Texture2D" uid="uid://bs2yy64tpt387" path="res://assets/tilesheet_complete_2X.png" id="2_ahwl3"]
+[ext_resource type="PackedScene" uid="uid://drgdnkn6bxijb" path="res://scenes/killzone.tscn" id="3_yxv5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obt5i"]
+radius = 30.0167
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbxv3"]
+radius = 23.1948
+
+[node name="roundRetractibleSpikes" type="StaticBody2D"]
+script = ExtResource("1_t1g0u")
+interval = -3.0
+
+[node name="Sprite2D_safe" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.671875, 0.671875)
+texture = ExtResource("2_ahwl3")
+region_enabled = true
+region_rect = Rect2(1920, 384, 128, 128)
+
+[node name="Sprite2D_harmful" type="Sprite2D" parent="."]
+position = Vector2(-5.3551e-06, -2.91038e-06)
+scale = Vector2(0.953, 0.953)
+texture = ExtResource("2_ahwl3")
+region_enabled = true
+region_rect = Rect2(1920, 256, 128, 128)
+
+[node name="Killzone" parent="Sprite2D_harmful" instance=ExtResource("3_yxv5i")]
+position = Vector2(-83.9454, -1.04931)
+scale = Vector2(1.04932, 1.04932)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D_harmful/Killzone"]
+position = Vector2(80, 1)
+rotation = -3.14159
+shape = SubResource("CircleShape2D_obt5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.14159
+shape = SubResource("CircleShape2D_qbxv3")
