@@ -1,43 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bft4dl5ayjcep"]
+[gd_scene load_steps=4 format=3 uid="uid://dp4i211h77t8j"]
 
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_omqfo"]
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
-[ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_3jpav"]
+[ext_resource type="PackedScene" uid="uid://dhdslsdm6oux5" path="res://scenes/levelManager.tscn" id="4_f5hst"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7ejw"]
-normal = Vector2(-0.973225, 0.229856)
-distance = 62.5409
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_31oke"]
-
-[node name="root" type="Node2D"]
-
-[node name="Wall" type="StaticBody2D" parent="."]
-rotation = 0.213527
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(495.957, -114.702)
-rotation = -0.289227
-shape = SubResource("WorldBoundaryShape2D_c7ejw")
-
-[node name="Line2D" type="Line2D" parent="Wall"]
-position = Vector2(600.633, 221.757)
-points = PackedVector2Array(0, 0, -500, -1000)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="SlopedGround" type="StaticBody2D" parent="."]
-rotation = 0.213527
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlopedGround"]
-position = Vector2(0, 81)
-shape = SubResource("WorldBoundaryShape2D_31oke")
-
-[node name="Line2D" type="Line2D" parent="SlopedGround"]
-position = Vector2(-756.419, 79.0875)
-points = PackedVector2Array(0, 0, 1800, 0)
+[node name="root2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_r30et")]
+position = Vector2(444, -188)
 
-[node name="Spikes" parent="." instance=ExtResource("2_3jpav")]
-position = Vector2(-227, -2.99999)
-rotation = 0.201188
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(569, -41)
+drag_vertical_enabled = true
+script = ExtResource("1_omqfo")
+player_path = NodePath("../Player")
+
+[node name="LevelManager" parent="." instance=ExtResource("4_f5hst")]
+player_path = NodePath("../Player")
+level_path_list = Array[String](["res://scenes/levels/startLevel.tscn", "res://scenes/levels/LEVEL1.tscn", "res://scenes/levels/LEVEL2.tscn", "res://scenes/levels/LEVEL3.tscn", "res://scenes/levels/LEVEL4.tscn", "res://scenes/levels/LEVEL5.tscn", "res://scenes/levels/LEVEL6.tscn", "res://scenes/levels/LEVEL7.tscn"])
+level_chance_weight_list = Array[float]([1.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0])
