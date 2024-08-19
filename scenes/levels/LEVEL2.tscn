@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://blnxwbs5elg38"]
+[gd_scene load_steps=5 format=3 uid="uid://blnxwbs5elg38"]
 
-[ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_51d7o"]
 [ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_58kir"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
@@ -13,9 +12,6 @@ size = Vector2(169, 2150.23)
 
 [node name="RootNode" type="Node2D"]
 position = Vector2(-13, -56)
-
-[node name="Player" parent="." instance=ExtResource("1_51d7o")]
-position = Vector2(571, -590)
 
 [node name="SPIKE1" parent="." instance=ExtResource("2_58kir")]
 position = Vector2(445, 638)
