@@ -2,16 +2,20 @@
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_omqfo"]
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
-[ext_resource type="PackedScene" uid="uid://fwh2d2k8kji1" path="res://scenes/levels/LEVEL1.tscn" id="2_82n34"]
+[ext_resource type="PackedScene" uid="uid://dhdslsdm6oux5" path="res://scenes/levelManager.tscn" id="4_f5hst"]
 
-[node name="root" type="Node2D"]
+[node name="root2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_r30et")]
 position = Vector2(444, -188)
 
-[node name="RootNode" parent="." instance=ExtResource("2_82n34")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(569, -41)
+drag_vertical_enabled = true
 script = ExtResource("1_omqfo")
 player_path = NodePath("../Player")
+
+[node name="LevelManager" parent="." instance=ExtResource("4_f5hst")]
+player_path = NodePath("../Player")
+level_path_list = Array[String](["res://scenes/levels/startLevel.tscn", "res://scenes/levels/LEVEL1.tscn", "res://scenes/levels/LEVEL2.tscn", "res://scenes/levels/LEVEL3.tscn", "res://scenes/levels/LEVEL4.tscn", "res://scenes/levels/LEVEL5.tscn", "res://scenes/levels/LEVEL6.tscn", "res://scenes/levels/LEVEL7.tscn"])
+level_chance_weight_list = Array[float]([1.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0])

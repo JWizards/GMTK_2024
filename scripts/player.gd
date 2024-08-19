@@ -25,17 +25,17 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if Input.is_action_pressed("jump"):
 		if not disable_jump:
 			var number_contacts = get_contact_count();
-			var jump_direction = Vector2() 
+			var jump_direction = Vector2()
 			for i in number_contacts:
 				jump_direction += state.get_contact_local_normal(i)
 			jump_direction = jump_direction.normalized()
 			apply_central_impulse(jump_force*jump_direction)
-						
-			set_physics_material_override(inflated_physics)			
+
+			set_physics_material_override(inflated_physics)
 			sprite_2d.apply_scale(Vector2(inflation_ratio,inflation_ratio))
 			collision_shape_2d.apply_scale(Vector2(inflation_ratio,inflation_ratio))
 			animation_player.play("big")
-			disable_jump = true		
+			disable_jump = true
 	elif disable_jump:
 		set_physics_material_override(null)
 		sprite_2d.apply_scale(Vector2(deflation_ratio,deflation_ratio))
