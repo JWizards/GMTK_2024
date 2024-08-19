@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://fwh2d2k8kji1"]
 
-[ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_eio8o"]
-[ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_3cap4"]
+[ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_jrv6i"]
+[ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_ivhai"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
 
@@ -11,15 +11,15 @@ a = Vector2(-1, 388)
 [node name="RootNode" type="Node2D"]
 position = Vector2(-13, -56)
 
-[node name="Player" parent="." instance=ExtResource("1_eio8o")]
+[node name="Player" parent="." instance=ExtResource("1_jrv6i")]
 position = Vector2(347, -175)
 
-[node name="SPIKE1" parent="." instance=ExtResource("2_3cap4")]
+[node name="SPIKE1" parent="." instance=ExtResource("2_ivhai")]
 position = Vector2(662, 308)
 rotation = 1.56726
 scale = Vector2(0.765, 0.785)
 
-[node name="SPIKE2" parent="." instance=ExtResource("2_3cap4")]
+[node name="SPIKE2" parent="." instance=ExtResource("2_ivhai")]
 position = Vector2(535, 641)
 rotation = 4.71239
 scale = Vector2(0.794, 0.689)
