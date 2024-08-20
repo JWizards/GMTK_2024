@@ -15,6 +15,7 @@ position = Vector2(569, -41)
 drag_vertical_enabled = true
 script = ExtResource("1_omqfo")
 player_path = NodePath("../Player")
+offset_y = 300.0
 
 [node name="LevelManager" parent="." instance=ExtResource("4_f5hst")]
 player_path = NodePath("../Player")
