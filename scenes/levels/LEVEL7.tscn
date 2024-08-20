@@ -10,7 +10,7 @@
 a = Vector2(-1, 388)
 b = Vector2(0.564713, 11.4982)
 
-[node name="RootNode" type="Node2D"]
+[node name="RootNode2" type="Node2D"]
 position = Vector2(-13, -56)
 
 [node name="SPIKE1" parent="." instance=ExtResource("1_rm7ur")]

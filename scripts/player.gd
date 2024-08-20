@@ -36,7 +36,7 @@ func _init() -> void:
 	can_sleep = false
 	contact_monitor = true
 	max_contacts_reported = 5    
-	inflated_physics.set_bounce(1)
+	inflated_physics.set_bounce(0.8)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if is_dead:
