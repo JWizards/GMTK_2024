@@ -44,7 +44,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
 		if not inflated:
-			print_debug("coyote start")
 			coyote_timer.start()
 			can_die = false
 			var number_contacts = get_contact_count();
@@ -64,5 +63,4 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 
 func _on_coyote_timer_timeout() -> void:
-	print_debug("coyote worked")
 	can_die = true
