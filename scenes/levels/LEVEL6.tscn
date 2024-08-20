@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://sm6q16gd2lk"]
+[gd_scene load_steps=5 format=3 uid="uid://sm6q16gd2lk"]
 
 [ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="1_irskg"]
+[ext_resource type="PackedScene" uid="uid://cnqeobhcw6a4w" path="res://scenes/roundRetractibleSpikes.tscn" id="1_tx44e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
 
@@ -10,6 +11,9 @@ b = Vector2(0.564713, 11.4982)
 
 [node name="RootNode" type="Node2D"]
 position = Vector2(-13, -56)
+
+[node name="roundRetractibleSpikes" parent="." instance=ExtResource("1_tx44e")]
+position = Vector2(758, 1020)
 
 [node name="SPIKE1" parent="." instance=ExtResource("1_irskg")]
 position = Vector2(333, 576)
@@ -59,8 +63,38 @@ position = Vector2(6, -697.757)
 scale = Vector2(1.01, 3.675)
 shape = SubResource("SegmentShape2D_jorcv")
 
+[node name="Flooring1_7" type="StaticBody2D" parent="FLOORING"]
+position = Vector2(858, 677)
+rotation = 0.16538
+scale = Vector2(1.374, 0.318)
+
+[node name="Line2D" type="Line2D" parent="FLOORING/Flooring1_7"]
+position = Vector2(-1, -172)
+rotation = 1.5708
+points = PackedVector2Array(-525.757, -5.99811, 926.717, -5.00336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_7"]
+position = Vector2(6, -697.757)
+scale = Vector2(1.01, 3.675)
+shape = SubResource("SegmentShape2D_jorcv")
+
+[node name="Flooring1_8" type="StaticBody2D" parent="FLOORING"]
+position = Vector2(875, 984)
+rotation = -0.674367
+scale = Vector2(1.146, 0.134)
+
+[node name="Line2D" type="Line2D" parent="FLOORING/Flooring1_8"]
+position = Vector2(-1, -172)
+rotation = 1.5708
+points = PackedVector2Array(-525.757, -5.99811, 926.717, -5.00336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_8"]
+position = Vector2(6, -697.757)
+scale = Vector2(1.01, 3.675)
+shape = SubResource("SegmentShape2D_jorcv")
+
 [node name="Flooring1_4" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(459, 72)
+position = Vector2(398, 77)
 rotation = 0.0446185
 scale = Vector2(1, 0.070225)
 
@@ -131,9 +165,9 @@ position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
 [node name="Flooring2_1" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(730, -118)
-rotation = 1.07861
-scale = Vector2(1.2077, 1.40621)
+position = Vector2(698, -84)
+rotation = 1.19866
+scale = Vector2(1.21799, 1.47688)
 skew = -0.0158997
 
 [node name="Line2D" type="Line2D" parent="FLOORING/Flooring2_1"]
@@ -176,7 +210,7 @@ position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
 [node name="Flooring2_2" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(828, 401)
+position = Vector2(825, 381)
 rotation = 2.42929
 scale = Vector2(1.1133, 0.980745)
 skew = -0.0158997
@@ -191,9 +225,9 @@ position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
 [node name="Flooring2_3" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(587, 190)
-rotation = 2.0213
-scale = Vector2(0.90608, 0.67901)
+position = Vector2(559, 182)
+rotation = 1.85143
+scale = Vector2(1.01289, 0.783716)
 skew = 0.0286074
 
 [node name="Line2D" type="Line2D" parent="FLOORING/Flooring2_3"]
