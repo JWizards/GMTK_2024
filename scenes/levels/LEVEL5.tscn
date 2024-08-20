@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bihvbhofoe73a"]
+[gd_scene load_steps=6 format=3 uid="uid://bihvbhofoe73a"]
 
-[ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_u1wow"]
-[ext_resource type="PackedScene" path="res://scenes/roundRetractibleSpikes.tscn" id="2_k8lmt"]
+[ext_resource type="PackedScene" uid="uid://cnqeobhcw6a4w" path="res://scenes/roundRetractibleSpikes.tscn" id="2_k8lmt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
 
@@ -18,9 +17,6 @@ a = Vector2(-1, 388)
 
 [node name="RootNode" type="Node2D"]
 position = Vector2(-13, -56)
-
-[node name="Player" parent="." instance=ExtResource("1_u1wow")]
-position = Vector2(347, -175)
 
 [node name="roundRetractibleSpikes" parent="." instance=ExtResource("2_k8lmt")]
 position = Vector2(593, 482)
