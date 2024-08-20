@@ -7,6 +7,7 @@
 [node name="root2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_r30et")]
+modulate = Color(0.952941, 1, 1, 1)
 position = Vector2(409, -320)
 
 [node name="Camera2D" type="Camera2D" parent="."]

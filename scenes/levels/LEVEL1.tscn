@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fwh2d2k8kji1"]
+[gd_scene load_steps=6 format=3 uid="uid://fwh2d2k8kji1"]
 
 [ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_ivhai"]
+[ext_resource type="Texture2D" uid="uid://dxdsm0krc4wjd" path="res://assets/bricks.png" id="2_kcg43"]
+[ext_resource type="Texture2D" uid="uid://blkkie8m3dgtj" path="res://assets/bricks2.png" id="3_6ioaw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
 
@@ -28,6 +30,7 @@ rotation = -4.71239
 [node name="Line2D" type="Line2D" parent="WallLeft"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
 position = Vector2(-2, 0)
@@ -41,6 +44,7 @@ rotation = -1.5708
 [node name="Line2D" type="Line2D" parent="WallRight"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
 position = Vector2(-2, 0)
@@ -57,6 +61,7 @@ scale = Vector2(1, 0.265)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_2"]
 position = Vector2(-1, -176)
@@ -70,6 +75,7 @@ rotation = -1.70891
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_1"]
 position = Vector2(-1, -176)
@@ -84,6 +90,7 @@ scale = Vector2(1, 1.06)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_3"]
 position = Vector2(-1, -176)
@@ -98,6 +105,7 @@ scale = Vector2(1.08609, 1.34049)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_4"]
 position = Vector2(-1, -176)
@@ -112,6 +120,7 @@ scale = Vector2(1.06966, 1.31284)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_5"]
 position = Vector2(-1, -176)
@@ -126,6 +135,7 @@ scale = Vector2(1, 0.248)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring2_2"]
 position = Vector2(-1, -176)
@@ -141,6 +151,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring2_1"]
 position = Vector2(-1, -176)
@@ -156,7 +167,32 @@ skew = 0.0286074
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring2_3"]
 position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1185, 31)
+scale = Vector2(-1, 1)
+
+[node name="Bricks3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-346, 783)
+texture = ExtResource("2_kcg43")
+
+[node name="Bricks2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-346, -314)
+texture = ExtResource("3_6ioaw")
+
+[node name="Bricks6" type="Sprite2D" parent="Node2D"]
+position = Vector2(1531.5, -275)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_6ioaw")
+
+[node name="Bricks8" type="Sprite2D" parent="Node2D"]
+position = Vector2(1531, 840)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_6ioaw")
