@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp4i211h77t8j"]
+[gd_scene load_steps=5 format=3 uid="uid://dp4i211h77t8j"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_omqfo"]
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
 [ext_resource type="PackedScene" uid="uid://dhdslsdm6oux5" path="res://scenes/levelManager.tscn" id="4_f5hst"]
+[ext_resource type="Texture2D" uid="uid://66ba3wcaitkd" path="res://assets/darkened2.png" id="4_o1rjy"]
 
 [node name="root2" type="Node2D"]
 
@@ -15,9 +16,19 @@ position = Vector2(569, -41)
 drag_vertical_enabled = true
 script = ExtResource("1_omqfo")
 player_path = NodePath("../Player")
-offset_y = 300.0
+offset_y = 250.0
 
 [node name="LevelManager" parent="." instance=ExtResource("4_f5hst")]
 player_path = NodePath("../Player")
 level_path_list = Array[String](["res://scenes/levels/startLevel.tscn", "res://scenes/levels/LEVEL1.tscn", "res://scenes/levels/LEVEL2.tscn", "res://scenes/levels/LEVEL3.tscn", "res://scenes/levels/LEVEL4.tscn", "res://scenes/levels/LEVEL5.tscn", "res://scenes/levels/LEVEL6.tscn", "res://scenes/levels/LEVEL7.tscn"])
 level_chance_weight_list = Array[float]([1.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0])
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0.8)
+scroll_offset = Vector2(692, -18)
+repeat_size = Vector2(0, 2225)
+repeat_times = 2
+
+[node name="Darkened2" type="Sprite2D" parent="Parallax2D"]
+z_index = -1
+texture = ExtResource("4_o1rjy")

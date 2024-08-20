@@ -9,7 +9,7 @@
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jorcv"]
 a = Vector2(-1, 388)
 
-[node name="RootNode" type="Node2D"]
+[node name="RootNode2" type="Node2D"]
 position = Vector2(-13, -56)
 
 [node name="SPIKE1" parent="." instance=ExtResource("2_ivhai")]
