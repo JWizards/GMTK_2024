@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp4i211h77t8j"]
+[gd_scene load_steps=7 format=3 uid="uid://dp4i211h77t8j"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_omqfo"]
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="3_jnjuq"]
 [ext_resource type="PackedScene" uid="uid://dhdslsdm6oux5" path="res://scenes/levelManager.tscn" id="4_f5hst"]
 [ext_resource type="Texture2D" uid="uid://66ba3wcaitkd" path="res://assets/darkened2.png" id="4_o1rjy"]
 [ext_resource type="Texture2D" uid="uid://bnq5wviyjcxcr" path="res://assets/press_toInflate.png" id="5_wbl8y"]
@@ -18,6 +19,20 @@ drag_vertical_enabled = true
 script = ExtResource("1_omqfo")
 player_path = NodePath("../Player")
 offset_y = 250.0
+
+[node name="Menu" type="Node2D" parent="Camera2D"]
+process_mode = 2
+position = Vector2(0, -2)
+script = ExtResource("3_jnjuq")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Menu"]
+z_index = -2
+offset_left = -1860.0
+offset_top = -1026.0
+offset_right = -1820.0
+offset_bottom = -986.0
+scale = Vector2(95.002, 52.7804)
+color = Color(0, 0, 0, 0.184314)
 
 [node name="LevelManager" parent="." instance=ExtResource("4_f5hst")]
 player_path = NodePath("../Player")

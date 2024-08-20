@@ -12,6 +12,9 @@ var inflated_physics = PhysicsMaterial.new()
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var splish_timer: Timer = $SplishTimer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var inflated: bool = false
 var is_dead: bool = false
@@ -37,6 +40,11 @@ func _init() -> void:
 	contact_monitor = true
 	max_contacts_reported = 5    
 	inflated_physics.set_bounce(0.8)
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		print_debug("pausing")
+		get_tree().paused = true
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if is_dead:
@@ -64,3 +72,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 func _on_coyote_timer_timeout() -> void:
 	can_die = true
+	
+func _on_splish_timer_timeout() -> void:
+	pass
