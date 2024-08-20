@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bihvbhofoe73a"]
+[gd_scene load_steps=8 format=3 uid="uid://bihvbhofoe73a"]
 
 [ext_resource type="PackedScene" uid="uid://cnqeobhcw6a4w" path="res://scenes/roundRetractibleSpikes.tscn" id="2_k8lmt"]
 [ext_resource type="PackedScene" uid="uid://bjychvf10ps6r" path="res://scenes/spikes.tscn" id="2_ys03k"]
+[ext_resource type="Texture2D" uid="uid://dxdsm0krc4wjd" path="res://assets/bricks.png" id="3_u1hej"]
+[ext_resource type="Texture2D" uid="uid://blkkie8m3dgtj" path="res://assets/bricks2.png" id="4_oq4c4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ci3h0"]
 
@@ -31,6 +33,7 @@ rotation = -4.71239
 [node name="Line2D" type="Line2D" parent="WallLeft"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
 position = Vector2(-2, 0)
@@ -44,6 +47,7 @@ rotation = -1.5708
 [node name="Line2D" type="Line2D" parent="WallRight"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
 position = Vector2(-2, 0)
@@ -66,6 +70,7 @@ scale = Vector2(0.161607, 1.1488)
 [node name="Line2D" type="Line2D" parent="FLOORING/WallR"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/WallR"]
 position = Vector2(-673.307, -9.74659)
@@ -80,6 +85,7 @@ scale = Vector2(0.161607, 1.1488)
 [node name="Line2D" type="Line2D" parent="FLOORING/WallL"]
 position = Vector2(-778, -0.00012207)
 points = PackedVector2Array(0, 0, 1800, 0)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/WallL"]
 position = Vector2(-673.307, -9.74659)
@@ -96,6 +102,7 @@ skew = 0.0879683
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/underPartR"]
 position = Vector2(-1, -176)
@@ -111,6 +118,7 @@ skew = 0.0879683
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/underPartR2"]
 position = Vector2(-1, -176)
@@ -126,6 +134,7 @@ skew = -0.132282
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/underPartL"]
 position = Vector2(-1, -176)
@@ -140,6 +149,7 @@ scale = Vector2(1.25767, 0.83332)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringL"]
 position = Vector2(-1, -176)
@@ -155,6 +165,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR"]
 position = Vector2(-1, -176)
@@ -170,6 +181,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR4"]
 position = Vector2(-1, -176)
@@ -185,6 +197,7 @@ skew = 0.0879683
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/underPartR3"]
 position = Vector2(-1, -176)
@@ -200,6 +213,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR5"]
 position = Vector2(-1, -176)
@@ -215,6 +229,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR7"]
 position = Vector2(-1, -176)
@@ -230,6 +245,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR8"]
 position = Vector2(-1, -176)
@@ -245,6 +261,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR6"]
 position = Vector2(-1, -176)
@@ -259,6 +276,7 @@ scale = Vector2(1.25767, 0.678)
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringL2"]
 position = Vector2(-1, -176)
@@ -274,6 +292,7 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR2"]
 position = Vector2(-1, -176)
@@ -289,7 +308,32 @@ skew = -0.0158997
 position = Vector2(-1, -172)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, 387, 0.999939)
+default_color = Color(0.592157, 0.662745, 0.666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/FlooringR3"]
 position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1185, 31)
+scale = Vector2(-1, 1)
+
+[node name="Bricks3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-346, 700)
+texture = ExtResource("3_u1hej")
+
+[node name="Bricks2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-346, -314)
+texture = ExtResource("4_oq4c4")
+
+[node name="Bricks6" type="Sprite2D" parent="Node2D"]
+position = Vector2(1531.5, -275)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("4_oq4c4")
+
+[node name="Bricks8" type="Sprite2D" parent="Node2D"]
+position = Vector2(1531, 840)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("4_oq4c4")
