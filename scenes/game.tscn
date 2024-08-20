@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp4i211h77t8j"]
+[gd_scene load_steps=6 format=3 uid="uid://dp4i211h77t8j"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_omqfo"]
 [ext_resource type="PackedScene" uid="uid://bg8l080p3dvvb" path="res://scenes/player.tscn" id="1_r30et"]
 [ext_resource type="PackedScene" uid="uid://dhdslsdm6oux5" path="res://scenes/levelManager.tscn" id="4_f5hst"]
 [ext_resource type="Texture2D" uid="uid://66ba3wcaitkd" path="res://assets/darkened2.png" id="4_o1rjy"]
+[ext_resource type="Texture2D" uid="uid://bnq5wviyjcxcr" path="res://assets/press_toInflate.png" id="5_wbl8y"]
 
 [node name="root2" type="Node2D"]
 
@@ -32,3 +33,9 @@ repeat_times = 2
 [node name="Darkened2" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 texture = ExtResource("4_o1rjy")
+
+[node name="PressToInflate" type="Sprite2D" parent="."]
+z_index = 20
+position = Vector2(429, 507)
+scale = Vector2(0.336627, 0.350505)
+texture = ExtResource("5_wbl8y")
