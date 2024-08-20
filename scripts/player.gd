@@ -11,13 +11,14 @@ var inflated_physics = PhysicsMaterial.new()
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 var inflated: bool = false
 var is_dead: bool = false
-
+var can_die: bool = true
 
 func die() -> bool:
-	if is_dead:
+	if is_dead or not can_die:
 		return false  # death unsuccessful - already dead
 	is_dead = true
 	if inflated:
@@ -43,6 +44,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
 		if not inflated:
+			print_debug("coyote start")
+			coyote_timer.start()
+			can_die = false
 			var number_contacts = get_contact_count();
 			var jump_direction = Vector2()
 			for i in number_contacts:
@@ -57,3 +61,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			inflated = true
 	elif inflated:
 		deflate()
+
+
+func _on_coyote_timer_timeout() -> void:
+	print_debug("coyote worked")
+	can_die = true
