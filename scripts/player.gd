@@ -12,14 +12,24 @@ var inflated_physics = PhysicsMaterial.new()
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var disable_jump: bool = false
+var inflated: bool = false
 var is_dead: bool = false
+
 
 func die() -> bool:
 	if is_dead:
 		return false  # death unsuccessful - already dead
 	is_dead = true
+	if inflated:
+		deflate()
 	return true
+
+func deflate() -> void:
+	set_physics_material_override(null)
+	sprite_2d.apply_scale(Vector2(deflation_ratio,deflation_ratio))
+	collision_shape_2d.apply_scale(Vector2(deflation_ratio,deflation_ratio))
+	animation_player.play("small")
+	inflated = false
 
 func _init() -> void:
 	can_sleep = false
@@ -32,7 +42,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		return
 	# Handle jump.
 	if Input.is_action_pressed("jump"):
-		if not disable_jump:
+		if not inflated:
 			var number_contacts = get_contact_count();
 			var jump_direction = Vector2()
 			for i in number_contacts:
@@ -44,10 +54,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			sprite_2d.apply_scale(Vector2(inflation_ratio,inflation_ratio))
 			collision_shape_2d.apply_scale(Vector2(inflation_ratio,inflation_ratio))
 			animation_player.play("big")
-			disable_jump = true
-	elif disable_jump:
-		set_physics_material_override(null)
-		sprite_2d.apply_scale(Vector2(deflation_ratio,deflation_ratio))
-		collision_shape_2d.apply_scale(Vector2(deflation_ratio,deflation_ratio))
-		animation_player.play("small")
-		disable_jump = false
+			inflated = true
+	elif inflated:
+		deflate()
