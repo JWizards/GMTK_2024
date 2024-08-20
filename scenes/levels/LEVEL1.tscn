@@ -16,7 +16,7 @@ rotation = 1.56726
 scale = Vector2(0.765, 0.785)
 
 [node name="SPIKE2" parent="." instance=ExtResource("2_ivhai")]
-position = Vector2(535, 641)
+position = Vector2(535, 848)
 rotation = 4.71239
 scale = Vector2(0.794, 0.689)
 skew = -0.00114048
@@ -89,8 +89,36 @@ points = PackedVector2Array(0, 0, 387, 0.999939)
 position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
+[node name="Flooring1_4" type="StaticBody2D" parent="FLOORING"]
+position = Vector2(654, -102)
+rotation = -1.81917
+scale = Vector2(1.08609, 1.34049)
+
+[node name="Line2D" type="Line2D" parent="FLOORING/Flooring1_4"]
+position = Vector2(-1, -172)
+rotation = 1.5708
+points = PackedVector2Array(0, 0, 387, 0.999939)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_4"]
+position = Vector2(-1, -176)
+shape = SubResource("SegmentShape2D_jorcv")
+
+[node name="Flooring1_5" type="StaticBody2D" parent="FLOORING"]
+position = Vector2(656, -14)
+rotation = -1.4336
+scale = Vector2(1.06966, 1.31284)
+
+[node name="Line2D" type="Line2D" parent="FLOORING/Flooring1_5"]
+position = Vector2(-1, -172)
+rotation = 1.5708
+points = PackedVector2Array(0, 0, 387, 0.999939)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOORING/Flooring1_5"]
+position = Vector2(-1, -176)
+shape = SubResource("SegmentShape2D_jorcv")
+
 [node name="Flooring2_2" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(555, 645)
+position = Vector2(555, 852)
 rotation = -3.1378
 scale = Vector2(1, 0.248)
 
@@ -104,7 +132,7 @@ position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
 [node name="Flooring2_1" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(763, 546)
+position = Vector2(763, 753)
 rotation = 1.38057
 scale = Vector2(1.05889, 1.00117)
 skew = -0.0158997
@@ -119,7 +147,7 @@ position = Vector2(-1, -176)
 shape = SubResource("SegmentShape2D_jorcv")
 
 [node name="Flooring2_3" type="StaticBody2D" parent="FLOORING"]
-position = Vector2(772, 752)
+position = Vector2(772, 959)
 rotation = 1.80661
 scale = Vector2(1.05624, 1.06421)
 skew = 0.0286074
