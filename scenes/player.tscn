@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg8l080p3dvvb"]
+[gd_scene load_steps=13 format=3 uid="uid://bg8l080p3dvvb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_b017k"]
 [ext_resource type="Texture2D" uid="uid://b3oafp4mos657" path="res://assets/fishTilesheet@2.png" id="1_kkcwp"]
+[ext_resource type="AudioStream" uid="uid://c326yp3i0hyks" path="res://assets/INFLATE.mp3" id="3_mrk3k"]
+[ext_resource type="AudioStream" uid="uid://dp827ihlcy53w" path="res://assets/DIE.mp3" id="4_5fii8"]
+[ext_resource type="AudioStream" uid="uid://cpwi71avh1o1" path="res://assets/deflate (2).mp3" id="4_dq3s7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hodkl"]
 atlas = ExtResource("1_kkcwp")
@@ -39,6 +42,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 2, 1, 2]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_mrk3k")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_3yeik"]
 resource_name = "die"
@@ -54,6 +72,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [2, 1, 2, 1, 2, 0]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_5fii8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_quq0c"]
 resource_name = "small"
@@ -69,6 +102,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [2, 1, 2, 1]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_dq3s7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xqws4"]
 _data = {
@@ -101,5 +149,9 @@ libraries = {
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -7.027
+pitch_scale = 2.81
 
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
